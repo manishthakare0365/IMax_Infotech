@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMAX Infosoft — IT Training & Placement Institute Bangalore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0D0F14;
+  --bg2:       #13161E;
+  --bg3:       #191D28;
+  --surface:   #1E2333;
+  --surface2:  #252A3A;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.12);
+  --blue:      #2563EB;
+  --blue-l:    #3B82F6;
+  --blue-glow: rgba(37,99,235,0.35);
+  --violet:    #7C3AED;
+  --pink:      #EC4899;
+  --text:      #F0F2F8;
+  --text2:     #8B92A8;
+  --text3:     #555D72;
+  --mono:      'JetBrains Mono', monospace;
+  --sans:      'Plus Jakarta Sans', sans-serif;
+  --grad:      linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #EC4899 100%);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 4px; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px;
+  background: rgba(13,15,20,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-mark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--grad);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 14px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+.nav-logo-text {
+  font-size: 17px; font-weight: 700; color: var(--text); letter-spacing: -0.3px;
+}
+.nav-logo-text span { color: var(--blue-l); }
+.nav-links {
+  display: flex; align-items: center; gap: 28px; list-style: none;
+}
+.nav-links a {
+  font-size: 13.5px; font-weight: 500; color: var(--text2);
+  text-decoration: none; transition: color 0.2s; letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-demo {
+  background: var(--blue); color: #fff;
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  padding: 9px 20px; border-radius: 8px; border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 0 0 0 var(--blue-glow);
+  text-decoration: none; display: inline-block;
+}
+.btn-demo:hover {
+  background: var(--blue-l); transform: translateY(-1px);
+  box-shadow: 0 4px 20px var(--blue-glow);
+}
+.nav-phone {
+  font-family: var(--mono); font-size: 12px; color: var(--text3);
+  border: 1px solid var(--border2); padding: 7px 14px; border-radius: 8px;
+  text-decoration: none; transition: color 0.2s, border-color 0.2s;
+}
+.nav-phone:hover { color: var(--text2); border-color: var(--border2); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 120px 56px 80px;
+  position: relative; overflow: hidden;
+}
+/* Gradient top accent line */
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: var(--grad); opacity: 0.8;
+}
+/* Subtle dot grid */
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+}
+/* Glow orbs */
+.orb1 {
+  position: absolute; top: -120px; left: 30%;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.orb2 {
+  position: absolute; top: 80px; right: -80px;
+  width: 380px; height: 380px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.orb3 {
+  position: absolute; bottom: -80px; left: 10%;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(236,72,153,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1140px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 440px; gap: 72px; align-items: center;
+  position: relative; z-index: 1;
+}
+
+/* Eyebrow */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue-l);
+  border: 1px solid rgba(59,130,246,0.3);
+  background: rgba(37,99,235,0.08);
+  padding: 6px 14px; border-radius: 6px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.6s ease both;
+}
+.eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--blue-l);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(1.4)} }
+
+/* Hero h1 */
+.hero-h1 {
+  font-size: clamp(44px, 5.5vw, 70px);
+  font-weight: 800; line-height: 1.02; letter-spacing: -2px;
+  color: var(--text); margin-bottom: 24px;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+.hero-h1 .grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-h1 .mono-text {
+  font-family: var(--mono); font-size: 0.85em; font-weight: 700;
+  color: var(--text3); letter-spacing: -1px;
+}
+
+.hero-sub {
+  font-size: 16px; line-height: 1.75; color: var(--text2);
+  max-width: 500px; margin-bottom: 40px; font-weight: 400;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-actions {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+.btn-primary-hero {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--blue); color: #fff;
+  font-family: var(--sans); font-size: 14px; font-weight: 600;
+  padding: 14px 28px; border-radius: 10px; text-decoration: none;
+  border: none; cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(37,99,235,0.5), 0 4px 32px rgba(37,99,235,0.3);
+  transition: all 0.2s;
+  position: relative; overflow: hidden;
+}
+.btn-primary-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+}
+.btn-primary-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgba(59,130,246,0.6), 0 8px 40px rgba(37,99,235,0.45);
+}
+.btn-ghost-hero {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--text2); font-size: 14px; font-weight: 500;
+  text-decoration: none; padding: 14px 20px;
+  border: 1px solid var(--border2); border-radius: 10px;
+  transition: all 0.2s;
+}
+.btn-ghost-hero:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+/* Hero right panel */
+.hero-panel {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 20px; padding: 28px;
+  position: relative; overflow: hidden;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+.hero-panel::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: var(--grad); opacity: 0.6;
+}
+.panel-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text3); margin-bottom: 20px;
+}
+.panel-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;
+}
+.pstat {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px 16px;
+}
+.pstat-num {
+  font-family: var(--mono); font-size: 28px; font-weight: 700;
+  color: var(--text); line-height: 1; letter-spacing: -1px;
+}
+.pstat-num .acc { color: var(--blue-l); }
+.pstat-label { font-size: 11px; color: var(--text3); margin-top: 5px; }
+
+.rating-row {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px;
+  display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+}
+.stars-big { font-size: 20px; letter-spacing: 2px; color: #F59E0B; }
+.rating-info { flex: 1; }
+.rating-score { font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--text); }
+.rating-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+.course-pills {
+  display: flex; flex-wrap: wrap; gap: 7px;
+}
+.cpill {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border2);
+  color: var(--text2); letter-spacing: 0.04em;
+  transition: all 0.15s;
+}
+.cpill:hover { background: var(--surface); color: var(--text); }
+.cpill.active { background: rgba(37,99,235,0.15); border-color: rgba(37,99,235,0.4); color: var(--blue-l); }
+
+/* ─── TICKER ─── */
+.ticker-wrap {
+  background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 14px 0; overflow: hidden; position: relative;
+}
+.ticker-wrap::before, .ticker-wrap::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2;
+  pointer-events: none;
+}
+.ticker-wrap::before { left: 0; background: linear-gradient(to right, var(--bg2), transparent); }
+.ticker-wrap::after  { right: 0; background: linear-gradient(to left,  var(--bg2), transparent); }
+.ticker-track {
+  display: flex; align-items: center; gap: 0;
+  animation: ticker 28s linear infinite;
+  width: max-content;
+}
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.ticker-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 32px; white-space: nowrap;
+  font-size: 12.5px; font-weight: 500; color: var(--text3);
+  border-right: 1px solid var(--border);
+}
+.ticker-item svg { width: 16px; height: 16px; }
+.ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--blue); }
+
+/* ─── SECTION COMMON ─── */
+section { padding: 100px 56px; }
+.section-inner { max-width: 1140px; margin: 0 auto; }
+.sec-label {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-l);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+.sec-label::before { content: '//'; color: var(--text3); }
+.sec-title {
+  font-size: clamp(32px, 4vw, 48px); font-weight: 800;
+  letter-spacing: -1.5px; color: var(--text); line-height: 1.08;
+}
+.sec-title .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.sec-sub { font-size: 16px; line-height: 1.7; color: var(--text2); margin-top: 14px; max-width: 540px; }
+
+/* ─── COURSES ─── */
+.courses-sec { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.courses-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; }
+.view-all-link {
+  font-family: var(--mono); font-size: 12px; color: var(--blue-l);
+  text-decoration: none; display: flex; align-items: center; gap: 5px;
+  transition: gap 0.2s;
+}
+.view-all-link:hover { gap: 9px; }
+
+.courses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.ccard {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  cursor: pointer; position: relative;
+}
+.ccard::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  opacity: 0; transition: opacity 0.25s;
+}
+.ccard.blue::before { background: linear-gradient(90deg, var(--blue), var(--violet)); }
+.ccard.violet::before { background: linear-gradient(90deg, var(--violet), var(--pink)); }
+.ccard.pink::before { background: linear-gradient(90deg, var(--pink), var(--blue)); }
+.ccard:hover { transform: translateY(-6px); border-color: var(--border2); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+.ccard:hover::before { opacity: 1; }
+
+.ccard-top { padding: 28px 28px 22px; border-bottom: 1px solid var(--border); }
+.ccard-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 18px;
+  position: relative;
+}
+.icon-b { background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.25); }
+.icon-v { background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.25); }
+.icon-p { background: rgba(236,72,153,0.15); border: 1px solid rgba(236,72,153,0.25); }
+
+.ccard-badge {
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 5px; margin-bottom: 12px;
+  display: inline-block;
+}
+.badge-b { background: rgba(37,99,235,0.12); color: #60A5FA; border: 1px solid rgba(37,99,235,0.2); }
+.badge-v { background: rgba(124,58,237,0.12); color: #A78BFA; border: 1px solid rgba(124,58,237,0.2); }
+.badge-p { background: rgba(236,72,153,0.12); color: #F472B6; border: 1px solid rgba(236,72,153,0.2); }
+
+.ccard-name { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.4px; margin-bottom: 8px; }
+.ccard-desc { font-size: 13.5px; color: var(--text2); line-height: 1.6; }
+.ccard-bot { padding: 20px 28px; }
+.ccard-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.ctag {
+  font-family: var(--mono); font-size: 11px; color: var(--text3);
+  border: 1px solid var(--border); border-radius: 5px;
+  padding: 3px 9px; transition: color 0.15s;
+}
+.ccard:hover .ctag { color: var(--text2); }
+.ccard-footer { display: flex; justify-content: space-between; align-items: center; }
+.ccard-dur { font-family: var(--mono); font-size: 11px; color: var(--text3); }
+.ccard-enroll {
+  font-size: 13px; font-weight: 600; color: var(--blue-l);
+  text-decoration: none; display: flex; align-items: center; gap: 4px;
+  transition: gap 0.15s;
+}
+.ccard-enroll:hover { gap: 8px; }
+
+/* ─── WHY IMAX ─── */
+.why-sec { background: var(--bg); }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.features-list { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+.feat {
+  display: flex; gap: 16px; padding: 20px;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; transition: border-color 0.2s, background 0.2s;
+}
+.feat:hover { background: var(--bg3); border-color: var(--border2); }
+.feat-icon {
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
+  background: var(--bg3); border: 1px solid var(--border);
+}
+.feat-text h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+.feat-text p  { font-size: 13px; color: var(--text2); line-height: 1.55; }
+
+/* Stats right column */
+.stats-col { display: flex; flex-direction: column; gap: 16px; }
+.big-stat-card {
+  background: var(--blue);
+  background: linear-gradient(135deg, rgba(37,99,235,0.9), rgba(124,58,237,0.8));
+  border-radius: 20px; padding: 36px; position: relative; overflow: hidden;
+}
+.big-stat-card::before {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+}
+.big-num {
+  font-family: var(--mono); font-size: 64px; font-weight: 700;
+  color: #fff; line-height: 1; letter-spacing: -3px;
+}
+.big-label { font-size: 15px; color: rgba(255,255,255,0.7); margin-top: 8px; }
+.big-sub { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 4px; }
+
+.mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.mini-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px 18px;
+}
+.mini-num {
+  font-family: var(--mono); font-size: 32px; font-weight: 700;
+  color: var(--text); line-height: 1; letter-spacing: -1px;
+}
+.mini-num .acc { color: var(--blue-l); }
+.mini-num .acc2 { color: #A78BFA; }
+.mini-num .acc3 { color: #F472B6; }
+.mini-label { font-size: 12px; color: var(--text3); margin-top: 6px; line-height: 1.4; }
+
+/* ─── COMPANIES ─── */
+.companies-sec {
+  background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 72px 56px;
+}
+.companies-label {
+  text-align: center; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3);
+  margin-bottom: 48px;
+}
+.logos-grid {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 0;
+  max-width: 1000px; margin: 0 auto;
+}
+.logo-cell {
+  flex: 0 0 calc(100% / 5);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px 20px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.logo-cell:hover { background: var(--bg3); }
+.logo-cell:nth-child(5n) { border-right: none; }
+.logo-cell:nth-child(n+6) { border-bottom: none; }
+.logo-cell svg, .logo-cell img { filter: brightness(0) invert(1); opacity: 0.3; transition: opacity 0.2s; max-width: 100px; height: auto; }
+.logo-cell:hover svg, .logo-cell:hover img { opacity: 0.65; }
+
+/* ─── TESTIMONIALS ─── */
+.testi-sec { background: var(--bg); }
+.testi-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+.rating-badge {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 10px; padding: 10px 18px;
+}
+.rb-score { font-family: var(--mono); font-size: 24px; font-weight: 700; color: #F59E0B; }
+.rb-stars { font-size: 14px; color: #F59E0B; letter-spacing: 2px; }
+.rb-label { font-size: 12px; color: var(--text3); margin-top: 1px; }
+
+.testi-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 16px; }
+.tcard {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 16px; padding: 28px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.tcard:hover { transform: translateY(-4px); border-color: var(--border2); }
+.tcard.featured {
+  grid-row: span 2; background: var(--surface);
+  border-color: rgba(37,99,235,0.2);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.tcard-stars { font-size: 13px; color: #F59E0B; letter-spacing: 2px; margin-bottom: 14px; }
+.tcard-quote {
+  font-size: 14.5px; line-height: 1.75; color: var(--text2); font-style: italic;
+  margin-bottom: 20px; flex: 1;
+}
+.tcard.featured .tcard-quote { font-size: 16px; color: var(--text); }
+.tcard-author { display: flex; align-items: center; gap: 12px; }
+.tcard-av {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px; flex-shrink: 0;
+  font-family: var(--mono);
+}
+.av1 { background: rgba(37,99,235,0.2); color: #60A5FA; border: 1px solid rgba(37,99,235,0.3); }
+.av2 { background: rgba(124,58,237,0.2); color: #A78BFA; border: 1px solid rgba(124,58,237,0.3); }
+.av3 { background: rgba(236,72,153,0.2); color: #F472B6; border: 1px solid rgba(236,72,153,0.3); }
+.av4 { background: rgba(245,158,11,0.2); color: #FCD34D; border: 1px solid rgba(245,158,11,0.3); }
+.tcard-name { font-size: 14px; font-weight: 600; color: var(--text); }
+.tcard-course { font-family: var(--mono); font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+/* ─── CTA ─── */
+.cta-sec {
+  padding: 0 56px 100px;
+}
+.cta-inner {
+  max-width: 1140px; margin: 0 auto;
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 24px; padding: 72px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-inner::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--grad);
+}
+.cta-inner::after {
+  content: '';
+  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-title {
+  font-size: clamp(32px, 4vw, 52px); font-weight: 800; letter-spacing: -1.5px;
+  color: var(--text); margin-bottom: 14px; position: relative; z-index: 1;
+}
+.cta-sub {
+  font-size: 16px; color: var(--text2); line-height: 1.7;
+  margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto;
+  position: relative; z-index: 1;
+}
+.cta-form {
+  display: flex; gap: 8px; max-width: 440px; margin: 0 auto 16px;
+  position: relative; z-index: 1;
+}
+.cta-input {
+  flex: 1; background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 10px; padding: 13px 18px;
+  font-family: var(--mono); font-size: 14px; color: var(--text);
+  outline: none; transition: border-color 0.2s;
+}
+.cta-input::placeholder { color: var(--text3); }
+.cta-input:focus { border-color: var(--blue); }
+.cta-submit {
+  background: var(--blue); color: #fff;
+  font-family: var(--sans); font-size: 14px; font-weight: 600;
+  padding: 13px 24px; border-radius: 10px; border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+  transition: all 0.2s; white-space: nowrap;
+}
+.cta-submit:hover { background: var(--blue-l); transform: translateY(-1px); }
+.cta-note {
+  font-family: var(--mono); font-size: 12px; color: var(--text3);
+  position: relative; z-index: 1;
+}
+.cta-note a { color: var(--blue-l); text-decoration: none; }
+
+/* ─── BRANCHES ─── */
+.branches-sec { background: var(--bg); padding: 0 56px 100px; }
+.branches-inner { max-width: 1140px; margin: 0 auto; }
+.branches-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.bcard {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 16px; padding: 36px; position: relative; overflow: hidden;
+  transition: border-color 0.2s;
+}
+.bcard::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--violet));
+}
+.bcard:hover { border-color: var(--border2); }
+.bcard-badge {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue-l); background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.25);
+  padding: 4px 12px; border-radius: 6px; display: inline-block; margin-bottom: 18px;
+}
+.bcard-name { font-size: 24px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; margin-bottom: 10px; }
+.bcard-addr { font-size: 14px; color: var(--text2); line-height: 1.7; margin-bottom: 20px; }
+.bcard-phone {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 20px; font-weight: 700; color: var(--blue-l);
+  text-decoration: none; transition: color 0.2s;
+}
+.bcard-phone:hover { color: #93C5FD; }
+.map-placeholder {
+  margin-top: 22px; height: 120px; border-radius: 10px;
+  background: var(--bg3); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 12px; color: var(--text3);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--bg2); border-top: 1px solid var(--border);
+  padding: 64px 56px 32px;
+}
+.footer-inner { max-width: 1140px; margin: 0 auto; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  padding-bottom: 48px; border-bottom: 1px solid var(--border); margin-bottom: 28px;
+}
+.footer-brand p { font-size: 13.5px; color: var(--text3); line-height: 1.7; margin-top: 12px; max-width: 260px; }
+.footer-col h5 {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--text3);
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col li a { font-size: 14px; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+.footer-col li a:hover { color: var(--text); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: 12px; color: var(--text3);
+}
+.footer-bottom a { color: var(--text3); text-decoration: none; transition: color 0.2s; }
+.footer-bottom a:hover { color: var(--text2); }
+.grad-line { height: 1px; background: var(--grad); opacity: 0.3; margin-bottom: 28px; }
+
+/* ─── WHATSAPP ─── */
+.wa-btn {
+  position: fixed; bottom: 28px; right: 28px; z-index: 999;
+  width: 54px; height: 54px; border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+}
+.wa-btn:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.6); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 24px 64px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-panel { display: none; }
+  section { padding: 64px 24px; }
+  .courses-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; gap: 40px; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .tcard.featured { grid-row: auto; }
+  .branches-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .companies-sec { padding: 56px 24px; }
+  .logo-cell { flex: 0 0 calc(100% / 3); }
+  .logo-cell:nth-child(5n) { border-right: 1px solid var(--border); }
+  .logo-cell:nth-child(3n) { border-right: none; }
+  .cta-sec { padding: 0 24px 64px; }
+  .cta-inner { padding: 48px 28px; }
+  .branches-sec { padding: 0 24px 64px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">IX</div>
+    <span class="nav-logo-text">IMAX <span>Infosoft</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">SAP / ERP</a></li>
+    <li><a href="#">Data Science</a></li>
+    <li><a href="#">AI</a></li>
+    <li><a href="#">Placements</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="tel:9343565658" class="nav-phone">📞 93435 65658</a>
+    <a href="#demo" class="btn-demo">Book Free Demo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="orb1"></div><div class="orb2"></div><div class="orb3"></div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span>Bengaluru's #1 IT Training Institute</div>
+      <h1 class="hero-h1">
+        Master <span class="grad-text">SAP, AI</span><br>
+        &amp; Data Science.<br>
+        <span class="mono-text">// Get placed.</span>
+      </h1>
+      <p class="hero-sub">Hands-on training by real-world industry experts. From beginner to job-ready in 3–6 months — with 100% placement support backed by MNC tie-ups.</p>
+      <div class="hero-actions">
+        <a href="#demo" class="btn-primary-hero">
+          Book a Free Demo
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#courses" class="btn-ghost-hero">
+          Explore Courses →
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-panel">
+      <div class="panel-label">// institute_stats.json</div>
+      <div class="panel-stats">
+        <div class="pstat">
+          <div class="pstat-num">5<span class="acc">,368</span></div>
+          <div class="pstat-label">Students trained</div>
+        </div>
+        <div class="pstat">
+          <div class="pstat-num">100<span class="acc">%</span></div>
+          <div class="pstat-label">Placement support</div>
+        </div>
+        <div class="pstat">
+          <div class="pstat-num">15<span class="acc">+</span></div>
+          <div class="pstat-label">Years in Bengaluru</div>
+        </div>
+        <div class="pstat">
+          <div class="pstat-num">2</div>
+          <div class="pstat-label">Branches</div>
+        </div>
+      </div>
+      <div class="rating-row">
+        <div>
+          <div class="stars-big">★★★★★</div>
+          <div class="rating-sub" style="font-family:var(--mono);font-size:11px;color:var(--text3);">5,368 verified reviews</div>
+        </div>
+        <div style="margin-left:auto;text-align:right">
+          <div class="rating-score">4.8 / 5</div>
+          <div class="rating-sub" style="font-size:12px;color:var(--text3);">Google Rating</div>
+        </div>
+      </div>
+      <div class="course-pills">
+        <span class="cpill active">SAP ABAP</span>
+        <span class="cpill active">SAP FICO</span>
+        <span class="cpill">Data Science</span>
+        <span class="cpill">Python</span>
+        <span class="cpill active">Artificial AI</span>
+        <span class="cpill">Tableau</span>
+        <span class="cpill">SAP MM</span>
+        <span class="cpill">Deep Learning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="ticker">
+    <span class="ticker-item"><span class="ticker-dot"></span>100% Placement Assistance</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>5,368+ Students Trained</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>4.8★ Google Rating</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Live Industry Projects</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>MNC Tie-Ups</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Flexible Batch Timings</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Senior Trainers</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Vijayanagar &amp; BTM Layout</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>100% Placement Assistance</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>5,368+ Students Trained</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>4.8★ Google Rating</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Live Industry Projects</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>MNC Tie-Ups</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Flexible Batch Timings</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Senior Trainers</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Vijayanagar &amp; BTM Layout</span>
+  </div>
+</div>
+
+<!-- COURSES -->
+<section class="courses-sec" id="courses">
+  <div class="section-inner">
+    <div class="courses-head reveal">
+      <div>
+        <div class="sec-label">programs</div>
+        <h2 class="sec-title">Courses Built for<br><span class="g">Real Careers</span></h2>
+      </div>
+      <a href="#" class="view-all-link">view all courses →</a>
+    </div>
+    <div class="courses-grid">
+      <!-- SAP -->
+      <div class="ccard blue reveal">
+        <div class="ccard-top">
+          <div class="ccard-icon icon-b">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#60A5FA" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#60A5FA" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#60A5FA" stroke-width="1.5"/><path d="M17.5 14v7M14 17.5h7" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="ccard-badge badge-b">ERP / SAP</div>
+          <div class="ccard-name">SAP Enterprise Training</div>
+          <div class="ccard-desc">End-to-end SAP training across all major modules with live system access, real business scenarios, and expert mentorship.</div>
+        </div>
+        <div class="ccard-bot">
+          <div class="ccard-tags">
+            <span class="ctag">ABAP</span><span class="ctag">FICO</span><span class="ctag">MM</span><span class="ctag">HR/HCM</span><span class="ctag">BASIS</span><span class="ctag">BW/BI</span><span class="ctag">+6 more</span>
+          </div>
+          <div class="ccard-footer">
+            <div class="ccard-dur">// 3–6 months</div>
+            <a href="#" class="ccard-enroll">Explore →</a>
+          </div>
+        </div>
+      </div>
+      <!-- Data Science -->
+      <div class="ccard violet reveal">
+        <div class="ccard-top">
+          <div class="ccard-icon icon-v">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12l4-4 4 4 4-6 4 6" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 20h18" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="ccard-badge badge-v">Data Science</div>
+          <div class="ccard-name">Data Science &amp; Analytics</div>
+          <div class="ccard-desc">From Python to Machine Learning and BI — build the skills that MNCs actively hire for, taught through live industry datasets.</div>
+        </div>
+        <div class="ccard-bot">
+          <div class="ccard-tags">
+            <span class="ctag">Python</span><span class="ctag">ML</span><span class="ctag">Tableau</span><span class="ctag">R Programming</span><span class="ctag">SAS</span>
+          </div>
+          <div class="ccard-footer">
+            <div class="ccard-dur">// 3–5 months</div>
+            <a href="#" class="ccard-enroll">Explore →</a>
+          </div>
+        </div>
+      </div>
+      <!-- AI -->
+      <div class="ccard pink reveal">
+        <div class="ccard-top">
+          <div class="ccard-icon icon-p">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#F472B6" stroke-width="1.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="#F472B6" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="ccard-badge badge-p">Artificial Intelligence</div>
+          <div class="ccard-name">AI &amp; Deep Learning</div>
+          <div class="ccard-desc">Master Neural Networks, NLP, Computer Vision, and deploy real AI systems — guided by certified AI professionals from top MNCs.</div>
+        </div>
+        <div class="ccard-bot">
+          <div class="ccard-tags">
+            <span class="ctag">Deep Learning</span><span class="ctag">NLP</span><span class="ctag">TensorFlow</span><span class="ctag">Computer Vision</span>
+          </div>
+          <div class="ccard-footer">
+            <div class="ccard-dur">// 4–6 months</div>
+            <a href="#" class="ccard-enroll">Explore →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IMAX -->
+<section class="why-sec">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <div class="sec-label reveal">why_imax</div>
+        <h2 class="sec-title reveal">Training That<br>Actually Gets<br>You <span class="g">Hired</span></h2>
+        <p class="sec-sub reveal">Our methodology is trusted by 5,368 alumni now working at India's biggest MNCs. We don't stop at training — we stay until you're placed.</p>
+        <div class="features-list">
+          <div class="feat reveal">
+            <div class="feat-icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="7" r="3.5" stroke="#60A5FA" stroke-width="1.3"/><path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="#60A5FA" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </div>
+            <div class="feat-text">
+              <h4>Senior Real-World Trainers</h4>
+              <p>Learn from working professionals with 10+ years of industry experience — not just classroom teachers.</p>
+            </div>
+          </div>
+          <div class="feat reveal">
+            <div class="feat-icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#A78BFA" stroke-width="1.3"/><path d="M7 10l2 2 4-4" stroke="#A78BFA" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="feat-text">
+              <h4>Live Project Internship</h4>
+              <p>Work on real industry projects so you can clear experience-category interviews — not just fresher ones.</p>
+            </div>
+          </div>
+          <div class="feat reveal">
+            <div class="feat-icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 2L12.4 7.6H18L13.3 11.1L15.2 17L10 13.5L4.8 17L6.7 11.1L2 7.6H7.6L10 2Z" stroke="#F472B6" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="feat-text">
+              <h4>Direct MNC Placement Tie-Ups</h4>
+              <p>We have active hiring relationships with Wipro, HCL, IBM, Accenture, Tech Mahindra, and more.</p>
+            </div>
+          </div>
+          <div class="feat reveal">
+            <div class="feat-icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5" stroke="#60A5FA" stroke-width="1.3"/><path d="M10 6v4.5l3 1.5" stroke="#60A5FA" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </div>
+            <div class="feat-text">
+              <h4>Flexible Batches — Online &amp; Offline</h4>
+              <p>Weekday, weekend, and evening batches. Classroom at Vijayanagar &amp; BTM Layout, or live online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-col reveal">
+        <div class="big-stat-card">
+          <div class="big-num">5,368<span style="font-size:36px;color:rgba(255,255,255,0.5)">+</span></div>
+          <div class="big-label">Students successfully placed</div>
+          <div class="big-sub">// across India in top MNCs</div>
+        </div>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <div class="mini-num">100<span class="acc">%</span></div>
+            <div class="mini-label">Placement assistance guaranteed</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-num">4.8<span class="acc2">★</span></div>
+            <div class="mini-label">Average Google rating</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-num">15<span class="acc3">+</span></div>
+            <div class="mini-label">Years of training excellence</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-num">2</div>
+            <div class="mini-label">Bengaluru campuses</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY LOGOS -->
+<section class="companies-sec">
+  <div class="section-inner" style="max-width:1140px;margin:0 auto">
+    <div class="companies-label">Our alumni are now working at India's leading companies</div>
+    <div class="logos-grid">
+
+      <!-- Wipro -->
+      <div class="logo-cell">
+        <svg height="32" viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="24" font-family="Arial Black, sans-serif" font-weight="900" font-size="22" fill="white">wipro</text>
+        </svg>
+      </div>
+
+      <!-- HCL -->
+      <div class="logo-cell">
+        <svg height="36" viewBox="0 0 100 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="27" font-family="Arial Black, sans-serif" font-weight="900" font-size="26" fill="white">HCL</text>
+        </svg>
+      </div>
+
+      <!-- Accenture -->
+      <div class="logo-cell">
+        <svg height="28" viewBox="0 0 160 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="21" font-family="Arial, sans-serif" font-weight="400" font-size="18" fill="white">accenture</text>
+          <polygon points="148,0 155,8 148,16" fill="white"/>
+        </svg>
+      </div>
+
+      <!-- IBM -->
+      <div class="logo-cell">
+        <svg height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- IBM stripes logo simplified -->
+          <rect x="0"  y="4"  width="18" height="4" rx="1" fill="white"/>
+          <rect x="0"  y="10" width="18" height="4" rx="1" fill="white"/>
+          <rect x="0"  y="16" width="18" height="4" rx="1" fill="white"/>
+          <rect x="22" y="4"  width="16" height="4" rx="1" fill="white"/>
+          <rect x="22" y="10" width="16" height="4" rx="1" fill="white"/>
+          <rect x="22" y="16" width="16" height="4" rx="1" fill="white"/>
+          <rect x="41" y="4"  width="4"  height="16" rx="1" fill="white"/>
+          <rect x="41" y="4"  width="16" height="4"  rx="1" fill="white"/>
+          <rect x="41" y="10" width="12" height="4"  rx="1" fill="white"/>
+          <rect x="41" y="16" width="16" height="4"  rx="1" fill="white"/>
+        </svg>
+      </div>
+
+      <!-- Tech Mahindra -->
+      <div class="logo-cell">
+        <svg height="28" viewBox="0 0 180 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="21" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="white">Tech Mahindra</text>
+        </svg>
+      </div>
+
+      <!-- Infosys -->
+      <div class="logo-cell">
+        <svg height="28" viewBox="0 0 130 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="21" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="white">Infosys</text>
+        </svg>
+      </div>
+
+      <!-- Mindtree -->
+      <div class="logo-cell">
+        <svg height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="21" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="white">Mindtree</text>
+        </svg>
+      </div>
+
+      <!-- CGI -->
+      <div class="logo-cell">
+        <svg height="36" viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="27" font-family="Arial Black, sans-serif" font-weight="900" font-size="26" fill="white">CGI</text>
+        </svg>
+      </div>
+
+      <!-- NTT Data -->
+      <div class="logo-cell">
+        <svg height="28" viewBox="0 0 130 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="21" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="white">NTT Data</text>
+        </svg>
+      </div>
+
+      <!-- Capgemini -->
+      <div class="logo-cell">
+        <svg height="28" viewBox="0 0 160 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="21" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="white">Capgemini</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec">
+  <div class="section-inner">
+    <div class="testi-head reveal">
+      <div>
+        <div class="sec-label">student_stories</div>
+        <h2 class="sec-title">What Our<br><span class="g">Alumni Say</span></h2>
+      </div>
+      <div class="rating-badge">
+        <div>
+          <div class="rb-score">4.8</div>
+          <div class="rb-stars">★★★★★</div>
+        </div>
+        <div>
+          <div style="font-size:13px;color:var(--text2);font-weight:600">Google Rating</div>
+          <div class="rb-label">from 5,368 students</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard featured reveal">
+        <div>
+          <div class="tcard-stars">★★★★★</div>
+          <div class="tcard-quote">"IMAX believes in 'Learn-by-Doing'. The practical sessions were intense — real IDE setup, real projects, real problems. My trainer took care of everything from scratch. I got placed within 3 weeks of completing the course. Best decision I made for my career."</div>
+        </div>
+        <div class="tcard-author">
+          <div class="tcard-av av1">SS</div>
+          <div>
+            <div class="tcard-name">Sandeep Sanklapur</div>
+            <div class="tcard-course">// python_data_science</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-quote">"Got trained in Python. At the end they gave 2 real-time projects which helped me understand concepts in a much better way."</div>
+        <div class="tcard-author">
+          <div class="tcard-av av2">RR</div>
+          <div>
+            <div class="tcard-name">Roopa Raj</div>
+            <div class="tcard-course">// python_training</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-quote">"Best institute for SAP SD. Got great exposure to the IT industry and the staff are incredibly helpful and supportive."</div>
+        <div class="tcard-author">
+          <div class="tcard-av av3">RR</div>
+          <div>
+            <div class="tcard-name">Ronit Roy</div>
+            <div class="tcard-course">// sap_sd_consultant</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-quote">"Totally satisfied. My trainer Shakir sir did a fantastic job — best SAP FICO training I could have asked for. The institute is top class."</div>
+        <div class="tcard-author">
+          <div class="tcard-av av4">VM</div>
+          <div>
+            <div class="tcard-name">Vijaya Madli</div>
+            <div class="tcard-course">// sap_fico</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-sec" id="demo">
+  <div class="cta-inner reveal">
+    <h2 class="cta-title">Start with a Free Demo</h2>
+    <p class="cta-sub">See the quality of our teaching before you commit. A live class with a real trainer — no fees, no pressure.</p>
+    <div class="cta-form">
+      <input class="cta-input" type="tel" placeholder="Enter your phone number" />
+      <button class="cta-submit">Book Demo →</button>
+    </div>
+    <div class="cta-note">Or call us: <a href="tel:9343565658">93435 65658</a> / <a href="tel:8073922743">80739 22743</a></div>
+  </div>
+</div>
+
+<!-- BRANCHES -->
+<div class="branches-sec">
+  <div class="branches-inner">
+    <div class="sec-label reveal">find_us</div>
+    <h2 class="sec-title reveal">Two Campuses in<br><span class="g">Bengaluru</span></h2>
+    <div class="branches-grid">
+      <div class="bcard reveal">
+        <div class="bcard-badge">// branch_01</div>
+        <div class="bcard-name">Vijayanagar</div>
+        <div class="bcard-addr">2948 E, 1st Floor, Maruthi Arcade, Service Road,<br>Above Karnataka Bank, Opp Maruthi Mandir,<br>Vijayanagar, Bengaluru — 560040</div>
+        <a href="tel:9343565658" class="bcard-phone">
+          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 4h4l2 4-2.5 1.5A11 11 0 0013.5 14L15 11.5l4 2v4a2 2 0 01-2 2A16 16 0 012 2a2 2 0 012-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          93435 65658
+        </a>
+        <div class="map-placeholder">[ Google Map — Vijayanagar ]</div>
+      </div>
+      <div class="bcard reveal">
+        <div class="bcard-badge">// branch_02</div>
+        <div class="bcard-name">BTM Layout</div>
+        <div class="bcard-addr">7, 2nd Floor, BTM 2nd Stage,<br>Above James Bond Dry Cleaner,<br>Near Water Tank Bus Stop, Karnataka — 560076</div>
+        <a href="tel:8073922743" class="bcard-phone">
+          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 4h4l2 4-2.5 1.5A11 11 0 0013.5 14L15 11.5l4 2v4a2 2 0 01-2 2A16 16 0 012 2a2 2 0 012-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          80739 22743
+        </a>
+        <div class="map-placeholder">[ Google Map — BTM Layout ]</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="grad-line"></div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-mark">IX</div>
+          <span class="nav-logo-text">IMAX <span>Infosoft</span></span>
+        </div>
+        <p>Bengaluru's trusted IT training and placement center. Empowering careers in SAP, Data Science, and AI since 2009.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Courses</h5>
+        <ul>
+          <li><a href="#">SAP ABAP</a></li>
+          <li><a href="#">SAP FICO</a></li>
+          <li><a href="#">SAP MM / HR</a></li>
+          <li><a href="#">Python</a></li>
+          <li><a href="#">Data Science</a></li>
+          <li><a href="#">Artificial Intelligence</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Institute</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Placements</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">Vijayanagar Branch</a></li>
+          <li><a href="#">BTM Layout Branch</a></li>
+          <li><a href="tel:9343565658">93435 65658</a></li>
+          <li><a href="tel:8073922743">80739 22743</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 IMAX Infosoft. All rights reserved.</span>
+      <div style="display:flex;gap:24px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp -->
+<a class="wa-btn" href="https://wa.me/919343565658" target="_blank" title="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 28 28" fill="white">
+    <path d="M14 2C7.37 2 2 7.37 2 14c0 2.13.56 4.12 1.54 5.84L2 26l6.32-1.52A11.93 11.93 0 0014 26c6.63 0 12-5.37 12-12S20.63 2 14 2zm0 21.8a9.76 9.76 0 01-5-1.38l-.36-.21-3.74.9.93-3.64-.24-.37A9.8 9.8 0 014.2 14c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.8-9.8 9.8zm5.38-7.33c-.3-.15-1.76-.87-2.03-.97s-.47-.15-.67.15-.77.97-.94 1.17-.35.22-.64.07c-1.78-.89-2.95-1.58-4.13-3.6-.31-.54.31-.5.9-1.67.1-.2.05-.37-.03-.52s-.67-1.62-.92-2.22c-.24-.58-.49-.5-.67-.51h-.57a1.1 1.1 0 00-.8.37c-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.28.17-1.41-.08-.12-.28-.2-.58-.34z"/>
+  </svg>
+</a>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Animated counters
+function animateCounter(el, target, suffix='') {
+  let start = 0;
+  const duration = 1800;
+  const step = timestamp => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target).toLocaleString() + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      animateCounter(el, target, suffix);
+      counterObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+</script>
+</body>
+</html>
