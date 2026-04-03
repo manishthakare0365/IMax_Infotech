@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IMAX Infosoft — IT Training & Placement Institute Bangalore</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:        #0D0F14;
@@ -25,7 +25,6 @@
   --text3:     #555D72;
   --mono:      'JetBrains Mono', monospace;
   --sans:      'Plus Jakarta Sans', sans-serif;
-  --hand:      'Caveat', cursive;
   --grad:      linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #EC4899 100%);
 }
 
@@ -59,7 +58,7 @@ nav {
 }
 .nav-logo-mark {
   width: 32px; height: 32px; border-radius: 8px;
-  background: var(--blue);
+  background: var(--grad);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--mono); font-size: 14px; font-weight: 700; color: #fff;
   flex-shrink: 0;
@@ -105,15 +104,11 @@ nav {
   padding: 120px 56px 80px;
   position: relative; overflow: hidden;
 }
-/* Hand-drawn top accent line */
+/* Gradient top accent line */
 .hero::before {
   content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--blue); opacity: 0.5;
-}
-.hero-squiggle {
-  position: absolute; top: 0; left: 0; right: 0; height: 10px;
-  pointer-events: none; z-index: 1; overflow: visible;
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: var(--grad); opacity: 0.8;
 }
 /* Subtle dot grid */
 .hero-grid {
@@ -122,9 +117,24 @@ nav {
   background-size: 36px 36px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
 }
-/* Organic SVG blobs (replace radial-gradient orbs) */
-.blob1, .blob2, .blob3 {
-  position: absolute; pointer-events: none;
+/* Glow orbs */
+.orb1 {
+  position: absolute; top: -120px; left: 30%;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.orb2 {
+  position: absolute; top: 80px; right: -80px;
+  width: 380px; height: 380px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.orb3 {
+  position: absolute; bottom: -80px; left: 10%;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(236,72,153,0.07) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .hero-inner {
@@ -159,12 +169,9 @@ nav {
   animation: fadeUp 0.6s 0.1s ease both;
 }
 .hero-h1 .grad-text {
-  color: var(--blue-l);
-  position: relative; display: inline-block;
-}
-.hero-h1 .grad-text .sketch-under {
-  position: absolute; bottom: -6px; left: 0;
-  width: 100%; height: 8px; overflow: visible; display: block;
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero-h1 .mono-text {
   font-family: var(--mono); font-size: 0.85em; font-weight: 700;
@@ -220,7 +227,7 @@ nav {
 .hero-panel::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: var(--blue); opacity: 0.5;
+  background: var(--grad); opacity: 0.6;
 }
 .panel-label {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
@@ -302,14 +309,7 @@ section { padding: 100px 56px; }
   font-size: clamp(32px, 4vw, 48px); font-weight: 800;
   letter-spacing: -1.5px; color: var(--text); line-height: 1.08;
 }
-.sec-title .g {
-  color: var(--blue-l);
-  position: relative; display: inline-block;
-}
-.sec-title .g .sketch-under {
-  position: absolute; bottom: -5px; left: 0;
-  width: 100%; height: 8px; overflow: visible; display: block;
-}
+.sec-title .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .sec-sub { font-size: 16px; line-height: 1.7; color: var(--text2); margin-top: 14px; max-width: 540px; }
 
 /* ─── COURSES ─── */
@@ -335,9 +335,9 @@ section { padding: 100px 56px; }
   position: absolute; top: 0; left: 0; right: 0; height: 2px;
   opacity: 0; transition: opacity 0.25s;
 }
-.ccard.blue::before { background: var(--blue); }
-.ccard.violet::before { background: var(--violet); }
-.ccard.pink::before { background: var(--pink); }
+.ccard.blue::before { background: linear-gradient(90deg, var(--blue), var(--violet)); }
+.ccard.violet::before { background: linear-gradient(90deg, var(--violet), var(--pink)); }
+.ccard.pink::before { background: linear-gradient(90deg, var(--pink), var(--blue)); }
 .ccard:hover { transform: translateY(-6px); border-color: var(--border2); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
 .ccard:hover::before { opacity: 1; }
 
@@ -402,11 +402,9 @@ section { padding: 100px 56px; }
 /* Stats right column */
 .stats-col { display: flex; flex-direction: column; gap: 16px; }
 .big-stat-card {
-  background: #1e3a8a;
+  background: var(--blue);
+  background: linear-gradient(135deg, rgba(37,99,235,0.9), rgba(124,58,237,0.8));
   border-radius: 20px; padding: 36px; position: relative; overflow: hidden;
-}
-.big-stat-card .doodle-star {
-  position: absolute; top: 18px; right: 22px; opacity: 0.2;
 }
 .big-stat-card::before {
   content: '';
@@ -482,7 +480,7 @@ section { padding: 100px 56px; }
   border-radius: 16px; padding: 28px;
   transition: transform 0.2s, border-color 0.2s;
 }
-.tcard.featured:hover { transform: translateY(-4px); border-color: var(--border2); }
+.tcard:hover { transform: translateY(-4px); border-color: var(--border2); }
 .tcard.featured {
   grid-row: span 2; background: var(--surface);
   border-color: rgba(37,99,235,0.2);
@@ -490,14 +488,10 @@ section { padding: 100px 56px; }
 }
 .tcard-stars { font-size: 13px; color: #F59E0B; letter-spacing: 2px; margin-bottom: 14px; }
 .tcard-quote {
-  font-family: var(--hand); font-size: 18px; line-height: 1.65; color: var(--text2);
+  font-size: 14.5px; line-height: 1.75; color: var(--text2); font-style: italic;
   margin-bottom: 20px; flex: 1;
 }
-.tcard.featured .tcard-quote { font-size: 21px; color: var(--text); }
-.tcard:nth-child(odd):not(.featured) { transform: rotate(-0.5deg); }
-.tcard:nth-child(even):not(.featured) { transform: rotate(0.4deg); }
-.tcard:nth-child(odd):not(.featured):hover { transform: rotate(-0.5deg) translateY(-4px); border-color: var(--border2); }
-.tcard:nth-child(even):not(.featured):hover { transform: rotate(0.4deg) translateY(-4px); border-color: var(--border2); }
+.tcard.featured .tcard-quote { font-size: 16px; color: var(--text); }
 .tcard-author { display: flex; align-items: center; gap: 12px; }
 .tcard-av {
   width: 38px; height: 38px; border-radius: 50%;
@@ -525,7 +519,14 @@ section { padding: 100px 56px; }
 .cta-inner::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--blue);
+  background: var(--grad);
+}
+.cta-inner::after {
+  content: '';
+  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 .cta-title {
   font-size: clamp(32px, 4vw, 52px); font-weight: 800; letter-spacing: -1.5px;
@@ -574,7 +575,7 @@ section { padding: 100px 56px; }
 .bcard::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--blue);
+  background: linear-gradient(90deg, var(--blue), var(--violet));
 }
 .bcard:hover { border-color: var(--border2); }
 .bcard-badge {
@@ -622,7 +623,7 @@ footer {
 }
 .footer-bottom a { color: var(--text3); text-decoration: none; transition: color 0.2s; }
 .footer-bottom a:hover { color: var(--text2); }
-.grad-line { height: 1px; background: var(--border2); opacity: 1; margin-bottom: 28px; }
+.grad-line { height: 1px; background: var(--grad); opacity: 0.3; margin-bottom: 28px; }
 
 /* ─── WHATSAPP ─── */
 .wa-btn {
@@ -694,25 +695,15 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
-
-  <!-- Organic SVG blobs instead of radial-gradient orbs -->
-  <svg class="blob1" width="600" height="520" viewBox="0 0 600 520" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:-140px;left:28%;pointer-events:none;">
-    <path d="M310 55 C390 10 510 55 548 185 C586 315 510 430 375 455 C240 480 125 395 100 265 C75 135 165 30 285 28 C298 27 305 57 310 55Z" fill="rgba(37,99,235,0.07)"/>
-  </svg>
-  <svg class="blob2" width="460" height="400" viewBox="0 0 460 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:50px;right:-110px;pointer-events:none;">
-    <path d="M290 28 C375 8 440 85 428 205 C416 320 332 385 215 370 C98 355 32 268 48 155 C64 48 170 -8 268 18 C280 21 285 30 290 28Z" fill="rgba(124,58,237,0.06)"/>
-  </svg>
-  <svg class="blob3" width="380" height="320" viewBox="0 0 380 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;bottom:-110px;left:6%;pointer-events:none;">
-    <path d="M205 28 C288 6 348 78 336 172 C324 268 244 318 148 295 C52 272 5 188 28 98 C51 15 138 -8 205 28Z" fill="rgba(236,72,153,0.05)"/>
-  </svg>
+  <div class="orb1"></div><div class="orb2"></div><div class="orb3"></div>
 
   <div class="hero-inner">
     <div>
       <div class="eyebrow"><span class="eyebrow-dot"></span>Bengaluru's #1 IT Training Institute</div>
       <h1 class="hero-h1">
-        Master <span class="grad-text">SAP, AI<svg class="sketch-under" viewBox="0 0 110 8" fill="none" preserveAspectRatio="none"><path d="M2 6 Q18 2 35 6 Q52 10 68 5 Q84 1 108 5" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span><br>
+        Master <span class="grad-text">SAP, AI</span><br>
         &amp; Data Science.<br>
-        <span class="mono-text" style="position:relative;display:inline-block;">// Get placed.<svg style="position:absolute;bottom:-8px;left:-6px;width:calc(100% + 12px);height:28px;overflow:visible;pointer-events:none;" viewBox="0 0 180 28" fill="none" preserveAspectRatio="none"><path d="M12 22 Q8 8 20 4 Q60 -2 100 3 Q140 8 158 6 Q172 4 170 14 Q168 24 140 26 Q100 30 60 26 Q28 22 12 22Z" stroke="rgba(59,130,246,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="mono-text">// Get placed.</span>
       </h1>
       <p class="hero-sub">Hands-on training by real-world industry experts. From beginner to job-ready in 3–6 months — with 100% placement support backed by MNC tie-ups.</p>
       <div class="hero-actions">
@@ -725,25 +716,6 @@ footer {
         </a>
       </div>
 
-      <!-- Hand-drawn doodles -->
-      <div style="position:relative;height:0;overflow:visible;">
-        <!-- Arrow pointing at CTA button -->
-        <svg style="position:absolute;top:-52px;left:210px;opacity:0.35;transform:rotate(-10deg);" width="58" height="44" viewBox="0 0 58 44" fill="none">
-          <path d="M4 38 Q18 8 50 18" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-          <path d="M44 12 L50 18 L43 23" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
-        <!-- Scattered star doodles -->
-        <svg style="position:absolute;top:-200px;left:-30px;opacity:0.18;" width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <path d="M11 2v18M2 11h18M4.9 4.9l12.2 12.2M17.1 4.9L4.9 17.1" stroke="#3B82F6" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        <svg style="position:absolute;top:-310px;left:420px;opacity:0.14;" width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M8 1v14M1 8h14M3.1 3.1l9.8 9.8M12.9 3.1L3.1 12.9" stroke="#7C3AED" stroke-width="1.3" stroke-linecap="round"/>
-        </svg>
-        <svg style="position:absolute;top:-150px;left:520px;opacity:0.12;" width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <circle cx="6" cy="6" r="5" stroke="#EC4899" stroke-width="1.2"/>
-          <circle cx="6" cy="6" r="2" stroke="#EC4899" stroke-width="1"/>
-        </svg>
-      </div>
     </div>
 
     <div class="hero-panel">
@@ -818,7 +790,7 @@ footer {
     <div class="courses-head reveal">
       <div>
         <div class="sec-label">programs</div>
-        <h2 class="sec-title">Courses Built for<br><span class="g">Real Careers<svg class="sketch-under" viewBox="0 0 140 8" fill="none" preserveAspectRatio="none"><path d="M2 6 Q25 2 50 6 Q75 10 100 5 Q118 1 138 5" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span></h2>
+        <h2 class="sec-title">Courses Built for<br><span class="g">Real Careers</span></h2>
       </div>
       <a href="#" class="view-all-link">view all courses →</a>
     </div>
@@ -893,7 +865,7 @@ footer {
     <div class="why-grid">
       <div>
         <div class="sec-label reveal">why_imax</div>
-        <h2 class="sec-title reveal">Training That<br>Actually Gets<br>You <span class="g">Hired<svg class="sketch-under" viewBox="0 0 75 8" fill="none" preserveAspectRatio="none"><path d="M2 6 Q18 2 37 6 Q55 10 73 5" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span></h2>
+        <h2 class="sec-title reveal">Training That<br>Actually Gets<br>You <span class="g">Hired</span></h2>
         <p class="sec-sub reveal">Our methodology is trusted by 5,368 alumni now working at India's biggest MNCs. We don't stop at training — we stay until you're placed.</p>
         <div class="features-list">
           <div class="feat reveal">
@@ -937,10 +909,6 @@ footer {
 
       <div class="stats-col reveal">
         <div class="big-stat-card">
-          <svg class="doodle-star" width="52" height="52" viewBox="0 0 52 52" fill="none">
-            <path d="M26 4v44M4 26h44M9.5 9.5l33 33M42.5 9.5l-33 33" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="26" cy="26" r="6" stroke="white" stroke-width="1.5" fill="none"/>
-          </svg>
           <div class="big-num">5,368<span style="font-size:36px;color:rgba(255,255,255,0.5)">+</span></div>
           <div class="big-label">Students successfully placed</div>
           <div class="big-sub">// across India in top MNCs</div>
@@ -1064,7 +1032,7 @@ footer {
     <div class="testi-head reveal">
       <div>
         <div class="sec-label">student_stories</div>
-        <h2 class="sec-title">What Our<br><span class="g">Alumni Say<svg class="sketch-under" viewBox="0 0 120 8" fill="none" preserveAspectRatio="none"><path d="M2 6 Q22 2 45 6 Q68 10 90 5 Q105 1 118 5" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span></h2>
+        <h2 class="sec-title">What Our<br><span class="g">Alumni Say</span></h2>
       </div>
       <div class="rating-badge">
         <div>
@@ -1148,7 +1116,7 @@ footer {
 <div class="branches-sec">
   <div class="branches-inner">
     <div class="sec-label reveal">find_us</div>
-    <h2 class="sec-title reveal">Two Campuses in<br><span class="g">Bengaluru<svg class="sketch-under" viewBox="0 0 110 8" fill="none" preserveAspectRatio="none"><path d="M2 6 Q20 2 42 6 Q64 10 84 5 Q98 1 108 5" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" fill="none"/></svg></span></h2>
+    <h2 class="sec-title reveal">Two Campuses in<br><span class="g">Bengaluru</span></h2>
     <div class="branches-grid">
       <div class="bcard reveal">
         <div class="bcard-badge">// branch_01</div>
